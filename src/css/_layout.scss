@@ -1,1 +1,31 @@
 /* page structure and media queries */
+* {
+  margin: 0;
+  padding: 0;
+  border: 1px solid green;
+}
+
+body {
+  display: flex;
+  width: 100%;
+}
+
+aside {
+  width: 30vw;
+}
+
+main {
+  width: 70vw;
+}
+
+header {
+
+}
+
+section {
+
+}
+
+#blockColorblindContent {
+  display: none;
+}

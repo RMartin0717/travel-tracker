@@ -8,28 +8,32 @@
     <title>Travel Tracker</title>
   </head>
   <body>
-    <header>
-      <h1>Travel Tracker</h1>
-      <h2>Welcome, User</h2>
-      <p>
-        Earn frequent flier miles every time you travel with us! Congrats! You have 0 frequent flier miles because you have spent $0 on trips this year!
-      </p>
-    </header>
     <aside>
-      <h2> Book your next flight, today!</h2>
-      <label for="destination-select">Select a destination:</label>
-      <select name="desination" id="destinationSelect">
-        <option value=" ">--Please choose an option--</option>
-        <option value="destination1">Destination1</option>
-      </select>
-      <p>Select Departure Date</p>
-      <!-- choose from calendar. dayjs or datepicker -->
-      <p>Duration of Your Trip</p>
-      <label for="numTravelers">Number of Travelers</label>
-      <input type="text" id="numTravelers" name="numTravelers" required minlength="1" size="3">
-      <p id="estimateCost">Estimated Cost: $_______</p>
+      <form>
+        <h2> Book your next flight, today!</h2>
+        <label for="destination-select">Select a destination:</label>
+        <select name="desination" id="destinationSelect" required aria-required="true">
+          <option value=" ">--Please choose an option--</option>
+          <option value="destination1">Destination1</option>
+        </select>
+        <p>Select Departure Date</p>
+        <!-- choose from calendar. dayjs or datepicker -->
+        <!-- make this required -->
+        <p>Duration of Your Trip</p>
+        <!-- make this required -->
+        <label for="numTravelers">Number of Travelers</label>
+        <input type="text" id="numTravelers" name="numTravelers" required aria-required="true" minlength="1" size="3">
+        <p id="estimateCost">Estimated Cost: $_______</p>
+      </form>
     </aside>
     <main>
+      <header>
+        <h1>Travel Tracker</h1>
+        <h2>Welcome, User</h2>
+        <p>
+          Earn frequent flier miles every time you travel with us! Congrats! You have 0 frequent flier miles because you have spent $0 on trips this year!
+        </p>
+      </header>
       <h2>Trip History</h2>
       <section class="trip-cards">
         <article>
