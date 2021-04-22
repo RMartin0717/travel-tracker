@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <meta charset='UTF-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ready to travel? Plan and book your next trip with Travel Tracker.">
     <title>Travel Tracker</title>
   </head>
   <body>
-    <h1>Travel Tracker</h1>
+    <aside>
+      <form>
+        <h2> Book your next flight, today!</h2>
+        <label for="destination-select">Select a destination:</label>
+        <select name="desination" id="destinationSelect" required aria-required="true">
+          <option value=" ">--Please choose an option--</option>
+          <option value="destination1">Destination1</option>
+        </select>
+        <p>Select Departure Date</p>
+        <!-- choose from calendar. dayjs or datepicker -->
+        <!-- make this required -->
+        <p>Duration of Your Trip</p>
+        <!-- make this required -->
+        <label for="numTravelers">Number of Travelers</label>
+        <input type="text" id="numTravelers" name="numTravelers" required aria-required="true" minlength="1" size="3">
+        <p id="estimateCost">Estimated Cost: $_______</p>
+      </form>
+    </aside>
+    <main>
+      <header>
+        <h1>Travel Tracker</h1>
+        <h2>Welcome, User</h2>
+        <p>
+          Earn frequent flier miles every time you travel with us! Congrats! You have 0 frequent flier miles because you have spent $0 on trips this year!
+        </p>
+      </header>
+      <h2>Trip History</h2>
+      <section class="trip-cards">
+        <article>
+          <h3></h3>
+          <p>Destination</p>
+          <p>Date</p>
+          <p>Duration</p>
+          <p>Status</p>
+        </article>
+      </section>
+    </main>
 
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
 
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+
+
   </body>
 </html>
