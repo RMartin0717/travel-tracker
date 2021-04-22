@@ -2,6 +2,7 @@
 // Do not delete or rename this file ********
 
 // An example of how you tell webpack to use a CSS (SCSS) file
+import main from "./css/main.scss"
 import domUpdates from "./domUpdates";
 import {
   retrieveData,
@@ -21,5 +22,6 @@ window.onload = fetchData();
 function fetchData() {
   retrieveData()
     .then(allFetchedData => console.log(allFetchedData, "data in index.js"))
+    //
 
 }

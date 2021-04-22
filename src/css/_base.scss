@@ -1,8 +1,16 @@
-/* variables, mixins */
-// $font-stack:
-// $primary-color:
+$font-stack: 'Open Sans', sans-serif;
+$primary-color: #219EBC;
+$container-color: #BCDEF1;
+$font-color: #023047;
+$border-color: #EEF7FB;
+$card-color: #FFF3D6;
+$comp-shadow: #FF8D0A;
 
-@mixin spacing() {
+
+@mixin container() {
   margin: 1vw;
   padding: 1vw;
+  padding-bottom: 5vw;
+  border: 2px solid $border-color;
+  border-radius: 15px;
 }
