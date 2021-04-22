@@ -2,16 +2,26 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid green;
+  // border: 1px solid $line-color;
+  background-color: transparent;
+  font-family: $font-stack;
+  color: $font-color;
 }
 
 body {
   display: flex;
   width: 100%;
+  background-color: $primary-color;
 }
 
 aside {
   width: 30vw;
+}
+
+form {
+  @include container;
+  margin-right: 0;
+  background-color: $container-color;
 }
 
 main {
@@ -19,11 +29,35 @@ main {
 }
 
 header {
-
+  @include container;
+  background-color: $container-color;
 }
 
 section {
 
+}
+
+h1 {
+
+}
+.form-elements {
+  @include container;
+  background-color: $card-color;
+}
+
+.welcome-user-box {
+  @include container;
+  background-color: $card-color;
+}
+
+.trip-history {
+  @include container;
+  background-color: $container-color;
+}
+
+.trip-cards {
+  @include container;
+  background-color: $card-color;
 }
 
 #blockColorblindContent {

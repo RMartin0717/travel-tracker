@@ -6,45 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ready to travel? Plan and book your next trip with Travel Tracker.">
     <title>Travel Tracker</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   </head>
   <body>
     <aside>
       <form>
         <h2> Book your next flight, today!</h2>
-        <label for="destination-select">Select a destination:</label>
-        <select name="desination" id="destinationSelect" required aria-required="true">
-          <option value=" ">--Please choose an option--</option>
-          <option value="destination1">Destination1</option>
-        </select>
-        <p>Select Departure Date</p>
-        <!-- choose from calendar. dayjs or datepicker -->
-        <!-- make this required -->
-        <p>Duration of Your Trip</p>
-        <!-- make this required -->
-        <label for="numTravelers">Number of Travelers</label>
-        <input type="text" id="numTravelers" name="numTravelers" required aria-required="true" minlength="1" size="3">
-        <!-- make sure this only takes numbers and has min and max -->
-        <p id="estimateCost">Estimated Cost: $_______</p>
+        <div class="form-elements">
+          <label for="destination-select">Select a destination:</label>
+          <select name="desination" id="destinationSelect" required aria-required="true">
+            <option value=" ">--Please choose an option--</option>
+            <option value="destination1">Destination1</option>
+          </select>
+          <p>Select Departure Date</p>
+          <!-- choose from calendar. dayjs or datepicker -->
+          <!-- make this required -->
+          <p>Duration of Your Trip</p>
+          <!-- make this required -->
+          <label for="numTravelers">Number of Travelers</label>
+          <input type="text" id="numTravelers" name="numTravelers" required aria-required="true" minlength="1" size="3">
+          <!-- make sure this only takes numbers and has min and max -->
+          <p id="estimateCost">Estimated Cost: $_______</p>
+        </div>
       </form>
     </aside>
     <main>
       <header>
         <h1>Travel Tracker</h1>
-        <h2>Welcome, User</h2>
-        <p>
-          Earn frequent flier miles every time you travel with us! Congrats! You have 0 frequent flier miles because you have spent $0 on trips this year!
-        </p>
+        <div class="welcome-user-box">
+          <h2>Welcome, User</h2>
+          <p>
+            Earn frequent flier miles every time you travel with us! Congrats! You have 0 frequent flier miles because you have spent $0 on trips this year!
+          </p>
+      </div>
       </header>
-      <h2>Trip History</h2>
-      <section class="trip-cards">
-        <article>
-          <h3></h3>
-          <p>Destination</p>
-          <p>Date</p>
-          <p>Duration</p>
-          <p>Status</p>
-        </article>
-      </section>
+      <div class="trip-history">
+        <h2>Trip History</h2>
+        <section class="trip-cards">
+          <article>
+            <h3>What a Good Trip</h3>
+            <p>Destination</p>
+            <!-- include image -->
+            <p>Date</p>
+            <p>Duration</p>
+            <p>Status</p>
+          </article>
+        </section>
+      </div>
     </main>
 
 
