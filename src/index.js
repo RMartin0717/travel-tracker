@@ -15,13 +15,9 @@ import './images/turing-logo.png'
 
 window.onload = fetchData();
 
-//how do i start the process of starting the API calls?
-//i think once they are started, onStartup should run
-
-
 function fetchData() {
   retrieveData()
     .then(allFetchedData => console.log(allFetchedData, "data in index.js"))
-    //
+    //maybe destructute data coming in
 
 }
