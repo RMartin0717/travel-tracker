@@ -16,7 +16,9 @@ class Traveler {
         travelerTrips.push(newTrip);
       }
     })
-    return travelerTrips
+    const sortedTravelerTrips = travelerTrips.sort((a,b) => b.date.split("/").join("") - a.date.split("/").join(""))
+
+    return sortedTravelerTrips
   }
 
   calcSpentThisYear() {

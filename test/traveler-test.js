@@ -19,21 +19,21 @@ describe("Traveler", () => {
   it("Should have a parameter that takes in trip data and stores the traveler's data in a property", () => {
     expect(traveler.tripData).to.deep.equal([
       {
-      "id": 3,
+      "id": 102,
       "userID": 3,
-      "destinationID": 22,
-      "travelers": 4,
-      "date": "2018/05/22",
-      "duration": 17,
-      "status": "pending",
+      "destinationID": 3,
+      "travelers": 3,
+      "date": "2020/09/26",
+      "duration": 8,
+      "status": "approved",
       "suggestedActivities": [],
       "destination": {
-        "id": 22,
-        "destination": "Rome, Italy",
-        "estimatedLodgingCostPerDay": 90,
-        "estimatedFlightCostPerPerson": 650,
-        "image": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-        "alt": "people standing inside a colosseum during the day"
+        "id": 3,
+        "destination": "Sydney, Austrailia",
+        "estimatedLodgingCostPerDay": 130,
+        "estimatedFlightCostPerPerson": 950,
+        "image": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+        "alt": "opera house and city buildings on the water with boats"
         }
       },
       {
@@ -73,21 +73,21 @@ describe("Traveler", () => {
         }
       },
       {
-      "id": 102,
+      "id": 3,
       "userID": 3,
-      "destinationID": 3,
-      "travelers": 3,
-      "date": "2020/09/26",
-      "duration": 8,
-      "status": "approved",
+      "destinationID": 22,
+      "travelers": 4,
+      "date": "2018/05/22",
+      "duration": 17,
+      "status": "pending",
       "suggestedActivities": [],
       "destination": {
-        "id": 3,
-        "destination": "Sydney, Austrailia",
-        "estimatedLodgingCostPerDay": 130,
-        "estimatedFlightCostPerPerson": 950,
-        "image": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-        "alt": "opera house and city buildings on the water with boats"
+        "id": 22,
+        "destination": "Rome, Italy",
+        "estimatedLodgingCostPerDay": 90,
+        "estimatedFlightCostPerPerson": 650,
+        "image": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+        "alt": "people standing inside a colosseum during the day"
         }
       },
     ])

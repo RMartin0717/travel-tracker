@@ -1,5 +1,6 @@
 class Trip {
   constructor(tripData, destinationsData) {
+    //when user creates new trip, send in as a tripData object with the needed properties
     this.id = tripData.id;
     this.userID = tripData.userID;
     this.destinationID = tripData.destinationID;
