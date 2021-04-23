@@ -19,5 +19,6 @@ function fetchData() {
   retrieveData()
     .then(allFetchedData => console.log(allFetchedData, "data in index.js"))
     //maybe destructute data coming in
-
+    //create instances needed in .then()'s
+    //call methods here from domUpdates to display to DOM
 }

@@ -4,6 +4,7 @@ class Traveler {
     this.name = traveler.name;
     this.travelerType = traveler.travelerType;
     this.tripData = tripData.filter(trip => trip.userID === this.id)
+    //i want tripData to store the destinationId, logding cost, and flight cost per person in addition to everything else
 
     //do i need this one? or is there another way to go about it?
     this.destinationsData = [];

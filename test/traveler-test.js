@@ -96,7 +96,7 @@ describe("Traveler", () => {
       }
     ])
   });
-  it.only("Should have a method to calculate the amount spent on trips this year including a travel agent's 10% fee", () => {
+  it("Should have a method to calculate the amount spent on trips this year including a travel agent's 10% fee", () => {
 
   });
 });
