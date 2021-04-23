@@ -8,15 +8,15 @@ class Trip {
     this.duration = tripData.duration;
     this.status = tripData.status;
     this.suggestedActivities = tripData.suggestedActivities;
-    this.destinationsData = destinationsData;
-    this.destination = this.getTripDestination();
+    this.destination = this.getTripDestination(destinationsData);
+    //can access all properites of destination from here (this.destination)
+
     //may need a way to take in user-given tripData for their trip planning
   }
 
-  getTripDestination() {
-    const destinationData = this.destinationsData.find(destination => destination.id === this.destinationID);
-    return destinationData
-    //can access all properites of destination from here
+  getTripDestination(destinationsData) {
+    const travelerDestination = destinationsData.find(destination => destination.id === this.destinationID);
+    return travelerDestination
   }
 
   calcTripCost() {

@@ -1,17 +1,22 @@
+import Trip from "./trip";
+
 class Traveler {
   constructor(traveler, tripData, destinationsData) {
     this.id = traveler.id;
     this.name = traveler.name;
     this.travelerType = traveler.travelerType;
-    this.tripData = tripData.filter(trip => trip.userID === this.id)
-    //i want tripData to store the destinationId, logding cost, and flight cost per person in addition to everything else
+    this.tripData = this.retrieveTravelerTripData(tripData, destinationsData);
+  }
 
-    //do i need this one? or is there another way to go about it?
-    this.destinationsData = [];
-    this.tripData.forEach(trip => {
-      const destinations = destinationsData.filter(destination => destination.id === trip.destinationID)
-      this.destinationsData.push(destinations[0])
-    });
+  retrieveTravelerTripData(tripData, destinationsData) {
+    let travelerTrips = [];
+    tripData.forEach(trip => {
+      if (trip.userID === this.id) {
+        const newTrip = new Trip(trip, destinationsData);
+        travelerTrips.push(newTrip);
+      }
+    })
+    return travelerTrips
   }
 
   calcSpentThisYear() {

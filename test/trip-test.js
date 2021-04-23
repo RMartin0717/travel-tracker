@@ -21,7 +21,7 @@ describe("Trip", () => {
     expect(trip.suggestedActivities).to.deep.equal([]);
   });
   it("Should find the destination data for an instance of a trip", () => {
-    expect(trip.getTripDestination()).to.deep.equal({
+    expect(trip.destination).to.deep.equal({
       "id": 49,
       "destination": "Castries, St Lucia",
       "estimatedLodgingCostPerDay": 650,
