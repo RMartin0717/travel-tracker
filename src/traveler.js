@@ -20,8 +20,30 @@ class Traveler {
   }
 
   calcSpentThisYear() {
-    //need to calculate amount spent on trips this year including 10% fee
-    //need to use destination id from tripData to get destination info which includes price
+    const yearsTrips = this.tripsThisYear();
+    const spentThisYear = yearsTrips.reduce((total, trip) => {
+      return total + trip.calcTripCost()
+    }, 0)
+    return spentThisYear
+
+  }
+  tripsThisYear() {
+    const currentDate = new Date();
+    const parsedCurrentDate = this.parseDate(currentDate);
+
+    const tripsThisYear = this.tripData.filter(trip => {
+      const parsedDate = trip.date.split("/").join("");
+      return parsedDate >= parsedCurrentDate - 10000
+    })
+    return tripsThisYear
+  }
+
+  parseDate(date) {
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    const parsedDate = `${yyyy}${mm}${dd}`
+    return parsedDate
   }
 }
 

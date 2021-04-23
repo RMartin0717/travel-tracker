@@ -23,7 +23,7 @@ describe("Traveler", () => {
       "userID": 3,
       "destinationID": 22,
       "travelers": 4,
-      "date": "2020/05/22",
+      "date": "2018/05/22",
       "duration": 17,
       "status": "pending",
       "suggestedActivities": [],
@@ -93,6 +93,6 @@ describe("Traveler", () => {
     ])
   });
   it("Should have a method to calculate the amount spent on trips this year including a travel agent's 10% fee", () => {
-
+    expect(traveler.calcSpentThisYear()).to.equal(15273.5);
   });
 });

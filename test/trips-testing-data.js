@@ -24,7 +24,7 @@ const tripsTestingData = [
   "userID": 3,
   "destinationID": 22,
   "travelers": 4,
-  "date": "2020/05/22",
+  "date": "2018/05/22",
   "duration": 17,
   "status": "pending",
   "suggestedActivities": []
