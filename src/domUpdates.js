@@ -40,14 +40,18 @@ let domUpdates = {
   },
   displayDestinationList(destinations) {
     const destinationSelect = document.querySelector("#destinationSelect");
-    destinationSelect.innerHTML = "";
-    console.log(destinations)
+    destinationSelect.innerHTML = `<option value="please-select">--Please Select a Destination--</option>`;
     destinations.forEach(destination => {
       destinationSelect.insertAdjacentHTML("beforeend",   `
           <option value="${destination.id}">${destination.destination}</option>
         `)
     });
   },
+
+  // displayEstimatedCost(trip) {
+  //   const estimateCost = document.querySelector("#estimateCost");
+  //   estimateCost.innerText = `Estimated Cost: $${}`;
+  // },
 }
 
 
