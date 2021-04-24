@@ -25,6 +25,8 @@ function onStartup() {
       newTraveler = new Traveler(allFetchedData.singleTraveler, allFetchedData.allTrips.trips, allFetchedData.allDestinations.destinations);
       domUpdates.greetTraveler(newTraveler)
       domUpdates.displayAmountSpent(newTraveler)
+      domUpdates.displayTravelerTrips(newTraveler)
+      domUpdates.displayTravelerTrips(newTraveler)
     })
     .catch(error => console.log("error"))
     //maybe destructute data coming in
