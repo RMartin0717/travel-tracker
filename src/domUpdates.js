@@ -38,6 +38,16 @@ let domUpdates = {
         `)
     });
   },
+  displayDestinationList(destinations) {
+    const destinationSelect = document.querySelector("#destinationSelect");
+    destinationSelect.innerHTML = "";
+    console.log(destinations)
+    destinations.forEach(destination => {
+      destinationSelect.insertAdjacentHTML("beforeend",   `
+          <option value="${destination.id}">${destination.destination}</option>
+        `)
+    });
+  },
 }
 
 
