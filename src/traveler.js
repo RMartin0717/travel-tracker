@@ -17,7 +17,6 @@ class Traveler {
       }
     })
     const sortedTravelerTrips = travelerTrips.sort((a,b) => b.date.split("/").join("") - a.date.split("/").join(""))
-
     return sortedTravelerTrips
   }
 

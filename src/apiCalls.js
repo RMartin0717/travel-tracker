@@ -34,7 +34,6 @@ export const retrieveData = () => {
       allData.singleTraveler = data[0];
       allData.allTrips = data[1];
       allData.allDestinations = data[2];
-      console.log(allData, "data in promise all")
       return allData
     })
     .catch(err => console.log("error"))
