@@ -1,17 +1,24 @@
-// query selectors??
+const welcomeTraveler = document.querySelector("#welcomeTraveler");
+const amountSpent = document.querySelector("#amountSpent");
+
+const destinationInput = document.querySelector("#destinationInput");
+const departureDateInput = document.querySelector("#departureDate");
+const durationInput = document.querySelector("#durationInput");
+const travelerInput = document.querySelector("#travelerInput");
+const estimateCostButton = document.querySelector("#estimateCostButton");
+const bookFlightButton = document.querySelector("#bookFlightButton");
+
+const tripCards = document.querySelector("#tripCards");
 
 let domUpdates = {
 
-  //for displaying destinations drop down, consider map or forEach
 
   greetTraveler(traveler) {
-    const welcomeTraveler = document.querySelector("#welcomeTraveler");
     welcomeTraveler.innerText =
       `Welcome, ${traveler.name.split(" ")[0]}`;
   },
 
   displayAmountSpent(traveler) {
-    const amountSpent = document.querySelector("#amountSpent");
     if (traveler.calcSpentThisYear() === 0 ) {
       amountSpent.innerText =
       `Earn frequent flier miles every time you travel with us!`
@@ -23,7 +30,6 @@ let domUpdates = {
   },
 
   displayTravelerTrips(traveler) {
-    const tripCards = document.querySelector("#tripCards");
     tripCards.innerHTML = "";
     traveler.tripData.forEach(trip => {
       tripCards.insertAdjacentHTML("beforeend",   `
@@ -39,19 +45,20 @@ let domUpdates = {
     });
   },
   displayDestinationList(destinations) {
-    const destinationSelect = document.querySelector("#destinationSelect");
-    destinationSelect.innerHTML = `<option value="please-select">--Please Select a Destination--</option>`;
+    destinationInput.innerHTML = `<option value="please-select">--Please Select a Destination--</option>`;
     destinations.forEach(destination => {
-      destinationSelect.insertAdjacentHTML("beforeend",   `
+      destinationInput.insertAdjacentHTML("beforeend",   `
           <option value="${destination.id}">${destination.destination}</option>
         `)
     });
   },
 
-  // displayEstimatedCost(trip) {
+  // function displayEstimatedCost(trip) {
   //   const estimateCost = document.querySelector("#estimateCost");
   //   estimateCost.innerText = `Estimated Cost: $${}`;
-  // },
+  // }
+
+
 }
 
 

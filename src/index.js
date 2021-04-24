@@ -28,9 +28,32 @@ function onStartup() {
       domUpdates.displayTravelerTrips(newTraveler)
       domUpdates.displayTravelerTrips(newTraveler)
       domUpdates.displayDestinationList(allFetchedData.allDestinations.destinations)
+      storeTraveler(newTraveler)
     })
     .catch(error => console.log("error"))
     //maybe destructute data coming in
     //create instances needed in .then()'s
     //call methods here from domUpdates to display to DOM
 }
+
+function storeTraveler(traveler) {
+  console.log(traveler)
+}
+// function createTrip(traveler) {
+//   let newTrip = {
+//     id: ,
+//     userID: traveler.id,
+//     destinationID: ,
+//     travelers: travelerInput.value,
+//     date: departureDateInput.value,
+//     duration: durationInput.value,
+//     status: "Pending"
+//   }
+//   let createdTrip = new Trip (trip);
+// }
+//
+
+//
+// function bookFlight(trip) {
+//
+// }
