@@ -53,10 +53,9 @@ let domUpdates = {
     });
   },
 
-  // function displayEstimatedCost(trip) {
-  //   const estimateCost = document.querySelector("#estimateCost");
-  //   estimateCost.innerText = `Estimated Cost: $${}`;
-  // }
+  displayEstimatedCost(cost) {
+    estimateCost.innerText = `Estimated Cost: $${cost}`;
+  },
 
 
 }

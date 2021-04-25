@@ -38,10 +38,3 @@ export const retrieveData = () => {
     })
     .catch(err => console.log("error"))
 }
-
-// see project spec for URL for deleting single trip
-
-// const retrieveAllTravelersData = fetch(allTravelersURL)
-//   .then(response => response.json())
-//   .then(data => data)
-//   .then(data => domUpdates.allTripsData = data)
