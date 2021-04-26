@@ -131,10 +131,19 @@ button {
   }
 
   main {
+    margin-left: 1vw;
+    margin-right: 1vw;
     width: 98vw;
   }
 
+  header {
+    height: 20vh;
+    min-height: 150px;
+  }
+
   aside {
+    margin-left: 1vw;
+    margin-right: 1vw;
     width: 98vw;
     min-width: 330px;
   }
@@ -146,6 +155,11 @@ button {
 
   form {
     height: 40vh;
+  }
+
+  .welcome-user-box {
+    height: 10vh;
+    min-height: 80px;
   }
 
   .form-elements {

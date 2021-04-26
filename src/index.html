@@ -38,22 +38,22 @@
         <h2> Book your next flight, today!</h2>
         <div class="form-elements">
           <div class="destination-form">
-            <label for="destination-select">Select a destination:</label>
-            <select name="desination" class="destination-select" id="destinationInput" required aria-required="true">
+            <label for="destinationInput">Select a destination:</label>
+            <select name="destinationInput" class="destination-select" id="destinationInput" required aria-required="true">
               <option value=" ">-Please choose an option-</option>
             </select>
           </div>
           <div>
-            <label for="start">Departure Date:</label>
+            <label for="departureDateInput">Departure Date:</label>
             <input type="date" id="departureDateInput" name="departure-date" min="2021-04-28" max="2022-04-28" required aria-required="true">
           </div>
           <div>
             <label for="durationInput">Duration of Your Trip</label>
-            <input type="number" min="1" max="25" id="durationInput" name="durationInput" required aria-required="true">
+            <input type="number" min="1" max="25" id="durationInput" name="duration-input" required aria-required="true">
           </div>
           <div>
             <label for="travelerInput">Number of Travelers</label>
-            <input type="number" min="1" max="25" id="travelerInput" name="travelerInput" required aria-required="true">
+            <input type="number" min="1" max="25" id="travelerInput" name="traveler-input" required aria-required="true">
           </div>
           <p id="estimateCost">Estimated Cost: $_______</p>
           <button class="estimate-cost" id="estimateCostButton">Estimate Cost</button>
