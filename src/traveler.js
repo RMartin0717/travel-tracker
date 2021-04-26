@@ -8,6 +8,10 @@ class Traveler {
     this.tripData = this.retrieveTravelerTripData(tripData, destinationsData);
   }
 
+
+//take in all trip data and for each trip for THIS traveler, create an instance of Destination class to return destination data object
+//need to use this destination data object to create instance of Trip
+//in retrieveTravelerTripData method, pass in only the destination data relevant
   retrieveTravelerTripData(tripData, destinationsData) {
     let travelerTrips = [];
     tripData.forEach(trip => {
@@ -17,7 +21,6 @@ class Traveler {
       }
     })
     const sortedTravelerTrips = travelerTrips.sort((a,b) => b.date.split("/").join("") - a.date.split("/").join(""))
-
     return sortedTravelerTrips
   }
 

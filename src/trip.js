@@ -1,6 +1,5 @@
 class Trip {
   constructor(tripData, destinationsData) {
-    //when user creates new trip, send in as a tripData object with the needed properties
     this.id = tripData.id;
     this.userID = tripData.userID;
     this.destinationID = tripData.destinationID;
@@ -10,9 +9,7 @@ class Trip {
     this.status = tripData.status;
     this.suggestedActivities = tripData.suggestedActivities;
     this.destination = this.getTripDestination(destinationsData);
-    //can access all properites of destination from here (this.destination)
-
-    //may need a way to take in user-given tripData for their trip planning
+    //remove this.destination and destinationsData parameter
   }
 
   getTripDestination(destinationsData) {

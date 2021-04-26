@@ -15,19 +15,18 @@
         <h2> Book your next flight, today!</h2>
         <div class="form-elements">
           <label for="destination-select">Select a destination:</label>
-          <select name="desination" id="destinationSelect" required aria-required="true">
+          <select name="desination" id="destinationInput" required aria-required="true">
             <option value=" ">--Please choose an option--</option>
-            <option value="destination1">Destination1</option>
           </select>
-          <p>Select Departure Date</p>
-          <!-- choose from calendar. dayjs or datepicker -->
-          <!-- make this required -->
-          <p>Duration of Your Trip</p>
-          <!-- make this required -->
-          <label for="numTravelers">Number of Travelers</label>
-          <input type="text" id="numTravelers" name="numTravelers" required aria-required="true" minlength="1" size="3">
-          <!-- make sure this only takes numbers and has min and max -->
+          <label for="start">Departure Date:</label>
+          <input type="date" id="departureDateInput" name="departure-date" min="2021-04-28" max="2022-04-28" required aria-required="true">
+          <label for="durationInput">Duration of Your Trip</label>
+          <input type="number" min="1" max="25" id="durationInput" name="durationInput" required aria-required="true">
+          <label for="travelerInput">Number of Travelers</label>
+          <input type="number" min="1" max="25" id="travelerInput" name="travelerInput" required aria-required="true">
           <p id="estimateCost">Estimated Cost: $_______</p>
+          <button class="estimate-cost" id="estimateCostButton">Estimate Cost</button>
+          <button class="book-flight" id="bookFlightButton">Book Flight</button>
         </div>
       </form>
     </aside>
@@ -35,19 +34,18 @@
       <header>
         <h1>Travel Tracker</h1>
         <div class="welcome-user-box">
-          <h2>Welcome, User</h2>
-          <p>
+          <h2 id="welcomeTraveler">Welcome, Traveler</h2>
+          <p id="amountSpent">
             Earn frequent flier miles every time you travel with us! Congrats! You have 0 frequent flier miles because you have spent $0 on trips this year!
           </p>
       </div>
       </header>
       <div class="trip-history">
         <h2>Trip History</h2>
-        <section class="trip-cards">
+        <section class="trip-cards" id="tripCards">
           <article>
             <h3>What a Good Trip</h3>
             <p>Destination</p>
-            <!-- include image -->
             <p>Date</p>
             <p>Duration</p>
             <p>Status</p>

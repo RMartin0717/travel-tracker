@@ -5,7 +5,7 @@ import domUpdates from "./domUpdates";
 export const retrieveData = () => {
 
   const singleTravelerURL = "http://localhost:3001/api/v1/travelers/50";
-  const allTripsURL ="http://localhost:3001/api/v1/trips";
+  const allTripsURL = "http://localhost:3001/api/v1/trips";
   const allDestinationsURL = "http://localhost:3001/api/v1/destinations";
   const modifySingleTripURL = "http://localhost:3001/api/v1/updateTrip";
 
@@ -34,15 +34,20 @@ export const retrieveData = () => {
       allData.singleTraveler = data[0];
       allData.allTrips = data[1];
       allData.allDestinations = data[2];
-      console.log(allData, "data in promise all")
       return allData
     })
     .catch(err => console.log("error"))
 }
 
-// see project spec for URL for deleting single trip
+export const sendData = (newData) => {
+  const allTripsURL = "http://localhost:3001/api/v1/trips"
 
-// const retrieveAllTravelersData = fetch(allTravelersURL)
-//   .then(response => response.json())
-//   .then(data => data)
-//   .then(data => domUpdates.allTripsData = data)
+  fetch(allTripsURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newData),
+  })
+    .catch(error => console.log("error"))
+}
