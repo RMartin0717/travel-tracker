@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  // border: 1px solid $line-color;
   background-color: transparent;
   font-family: $font-stack;
   color: $font-color;
@@ -11,56 +10,179 @@
 body {
   display: flex;
   width: 100%;
+  height: 100vh;
   background-color: $primary-color;
 }
 
 aside {
+  margin-right: 1vw;
   width: 30vw;
 }
 
 form {
   @include container;
   margin-right: 0;
+  height: 90vh;
+  min-height: 480px;
   background-color: $container-color;
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 70vw;
+  min-width: 330px;
 }
 
 header {
   @include container;
+  height: 20vh;
+  min-height: 120px;
   background-color: $container-color;
 }
 
-section {
-
+h2 {
+  margin-left: 2vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
-h1 {
-
+button {
+  width: 15vw;
 }
 
 .form-elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 70vh;
+  min-height: 360px;
+  text-align: center;
   @include container;
   background-color: $card-color;
 }
 
+.destination-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.destination-select {
+  width: 20vw;
+}
+
+.travel-tracker-heading {
+  margin-top: 0;
+  margin-left: 1vw;
+  margin-bottom: 0;
+}
+
 .welcome-user-box {
+  height: 9vh;
+  min-height: 55px;
   @include container;
   background-color: $card-color;
 }
 
 .trip-history {
   @include container;
+  margin-bottom: 1vh;
+  height: 62vh;
+  min-height: 315px;
   background-color: $container-color;
 }
 
 .trip-cards {
   @include container;
+  height: 50vh;
+  min-height: 240px;
   background-color: $card-color;
+  overflow: scroll;
+}
+
+.trip-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 2vw;
+  padding: 2vw;
+  border: 1px solid $font-color;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.trip-card > img {
+  width: 20vw;
 }
 
 #blockColorblindContent {
   display: none;
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+    flex-direction: column;
+  }
+
+  main {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 98vw;
+  }
+
+  header {
+    height: 20vh;
+    min-height: 150px;
+  }
+
+  aside {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 98vw;
+    min-width: 330px;
+  }
+
+  button {
+    width: 40vw;
+    min-width: 80px;
+  }
+
+  form {
+    height: 40vh;
+  }
+
+  .welcome-user-box {
+    height: 10vh;
+    min-height: 80px;
+  }
+
+  .form-elements {
+    height: 40vh;
+  }
+
+  .destination-select {
+    min-width: 120px;
+  }
+
+  .trip-history {
+    height: auto;
+  }
+
+  .trip-cards {
+    height: 100%
+  }
+
+  .trip-card {
+    flex-direction: column;
+  }
+
+  .trip-card > img {
+    width: 50vw;
+  }
 }

@@ -84,8 +84,8 @@ function estimateCost() {
 
 function bookFlight() {
   event.preventDefault();
-  const createdTrip = createTrip();
-  const {id, userID, destinationID, travelers, date, duration, status} = createdTrip
-  const newData = {id: id, userID: userID, destinationID: destinationID, travelers: travelers, date: date, duration: duration, status: status, suggestedActivities: []}
+  createdTrip = createTrip();
+  let {id, userID, destinationID, travelers, date, duration, status} = createdTrip
+  let newData = {id: id, userID: userID, destinationID: destinationID, travelers: travelers, date: date, duration: duration, status: status, suggestedActivities: []}
   sendData(newData);
 }

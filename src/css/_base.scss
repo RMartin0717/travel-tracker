@@ -8,9 +8,14 @@ $comp-shadow: #FF8D0A;
 
 
 @mixin container() {
-  margin: 1vw;
-  padding: 1vw;
-  padding-bottom: 5vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 15px;
+  margin-bottom: 1vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 5vh;
   border: 2px solid $border-color;
   border-radius: 15px;
 }
