@@ -38,13 +38,15 @@ let domUpdates = {
     tripCards.innerHTML = "";
     traveler.tripData.forEach(trip => {
       tripCards.insertAdjacentHTML("beforeend",   `
-        <article>
-          <h3>What a Good Trip</h3>
-          <p>Destination: ${trip.destination.destination}</p>
+        <article class="trip-card">
+          <div class="card-info">
+            <h3>What a Good Trip</h3>
+            <p>Destination: ${trip.destination.destination}</p>
+            <p>Date: ${trip.date}</p>
+            <p>Duration: ${trip.duration}</p>
+            <p>Status: ${trip.status}</p>
+          </div>
           <img src=${trip.destination.image} alt=${trip.destination.alt} />
-          <p>Date: ${trip.date}</p>
-          <p>Duration: ${trip.duration}</p>
-          <p>Status: ${trip.status}</p>
         </article>
         `)
     });

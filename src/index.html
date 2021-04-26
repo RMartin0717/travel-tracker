@@ -10,26 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   </head>
   <body>
-    <aside>
-      <form>
-        <h2> Book your next flight, today!</h2>
-        <div class="form-elements">
-          <label for="destination-select">Select a destination:</label>
-          <select name="desination" id="destinationInput" required aria-required="true">
-            <option value=" ">--Please choose an option--</option>
-          </select>
-          <label for="start">Departure Date:</label>
-          <input type="date" id="departureDateInput" name="departure-date" min="2021-04-28" max="2022-04-28" required aria-required="true">
-          <label for="durationInput">Duration of Your Trip</label>
-          <input type="number" min="1" max="25" id="durationInput" name="durationInput" required aria-required="true">
-          <label for="travelerInput">Number of Travelers</label>
-          <input type="number" min="1" max="25" id="travelerInput" name="travelerInput" required aria-required="true">
-          <p id="estimateCost">Estimated Cost: $_______</p>
-          <button class="estimate-cost" id="estimateCostButton">Estimate Cost</button>
-          <button class="book-flight" id="bookFlightButton">Book Flight</button>
-        </div>
-      </form>
-    </aside>
     <main>
       <header>
         <h1>Travel Tracker</h1>
@@ -53,7 +33,34 @@
         </section>
       </div>
     </main>
-
+    <aside>
+      <form>
+        <h2> Book your next flight, today!</h2>
+        <div class="form-elements">
+          <div class="destination-form">
+            <label for="destination-select">Select a destination:</label>
+            <select name="desination" class="destination-select" id="destinationInput" required aria-required="true">
+              <option value=" ">-Please choose an option-</option>
+            </select>
+          </div>
+          <div>
+            <label for="start">Departure Date:</label>
+            <input type="date" id="departureDateInput" name="departure-date" min="2021-04-28" max="2022-04-28" required aria-required="true">
+          </div>
+          <div>
+            <label for="durationInput">Duration of Your Trip</label>
+            <input type="number" min="1" max="25" id="durationInput" name="durationInput" required aria-required="true">
+          </div>
+          <div>
+            <label for="travelerInput">Number of Travelers</label>
+            <input type="number" min="1" max="25" id="travelerInput" name="travelerInput" required aria-required="true">
+          </div>
+          <p id="estimateCost">Estimated Cost: $_______</p>
+          <button class="estimate-cost" id="estimateCostButton">Estimate Cost</button>
+          <button class="book-flight" id="bookFlightButton">Book Flight</button>
+        </div>
+      </form>
+    </aside>
 
 
 
