@@ -22,24 +22,30 @@ aside {
 form {
   @include container;
   margin-right: 0;
+  height: 90vh;
+  min-height: 480px;
   background-color: $container-color;
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 70vw;
+  min-width: 330px;
 }
 
 header {
   @include container;
+  height: 20vh;
+  min-height: 120px;
   background-color: $container-color;
 }
 
-section {
-
-}
-
 h2 {
-  margin-bottom: 2vw;
+  margin-left: 2vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
 button {
@@ -51,7 +57,8 @@ button {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 60vh;
+  height: 70vh;
+  min-height: 360px;
   text-align: center;
   @include container;
   background-color: $card-color;
@@ -67,20 +74,33 @@ button {
   width: 20vw;
 }
 
+.travel-tracker-heading {
+  margin-top: 0;
+  margin-left: 1vw;
+  margin-bottom: 0;
+}
+
 .welcome-user-box {
+  height: 9vh;
+  min-height: 55px;
   @include container;
   background-color: $card-color;
 }
 
 .trip-history {
   @include container;
+  margin-bottom: 1vh;
+  height: 62vh;
+  min-height: 315px;
   background-color: $container-color;
-  overflow: scroll;
 }
 
 .trip-cards {
   @include container;
+  height: 50vh;
+  min-height: 240px;
   background-color: $card-color;
+  overflow: scroll;
 }
 
 .trip-card {
@@ -105,7 +125,7 @@ button {
   display: none;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 650px) {
   body {
     flex-direction: column;
   }
@@ -116,14 +136,32 @@ button {
 
   aside {
     width: 98vw;
+    min-width: 330px;
   }
 
   button {
     width: 40vw;
+    min-width: 80px;
+  }
+
+  form {
+    height: 40vh;
   }
 
   .form-elements {
     height: 40vh;
+  }
+
+  .destination-select {
+    min-width: 120px;
+  }
+
+  .trip-history {
+    height: auto;
+  }
+
+  .trip-cards {
+    height: 100%
   }
 
   .trip-card {
