@@ -5,7 +5,7 @@ import domUpdates from "./domUpdates";
 export const retrieveData = () => {
 
   const singleTravelerURL = "http://localhost:3001/api/v1/travelers/50";
-  const allTripsURL ="http://localhost:3001/api/v1/trips";
+  const allTripsURL = "http://localhost:3001/api/v1/trips";
   const allDestinationsURL = "http://localhost:3001/api/v1/destinations";
   const modifySingleTripURL = "http://localhost:3001/api/v1/updateTrip";
 
@@ -37,4 +37,17 @@ export const retrieveData = () => {
       return allData
     })
     .catch(err => console.log("error"))
+}
+
+export const sendData = (newData) => {
+  const allTripsURL = "http://localhost:3001/api/v1/trips"
+
+  fetch(allTripsURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newData),
+  })
+    .catch(error => console.log("error"))
 }

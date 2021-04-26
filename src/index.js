@@ -9,7 +9,7 @@ import Trip from "./trip";
 
 import {
   retrieveData,
-  // sendData
+  sendData
 } from "./apiCalls";
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
@@ -69,22 +69,23 @@ function createTrip() {
     duration: durationInput.value,
     status: "Pending"
   }
-  console.log(departureDateInput.value.split("-").join("/"))
-  const currentDestination = domUpdates.getTripDestination(newTrip.destinationID)
-  //pass in array of just the relevant destination data
+  console.log(departureDateInput.value.split("-").join("/"));
+  const currentDestination = domUpdates.getTripDestination(newTrip.destinationID);
   createdTrip = new Trip(newTrip, [currentDestination]);
-  //need to pass in single destination object for that second parameter
   return createdTrip
 }
 
 function estimateCost() {
   event.preventDefault();
   createTrip();
-  console.log(createdTrip)
   const cost = createdTrip.calcTripCost();
   domUpdates.displayEstimatedCost(cost);
 }
 
 function bookFlight() {
   event.preventDefault();
+  const createdTrip = createTrip();
+  const {id, userID, destinationID, travelers, date, duration, status} = createdTrip
+  const newData = {id: id, userID: userID, destinationID: destinationID, travelers: travelers, date: date, duration: duration, status: status, suggestedActivities: []}
+  sendData(newData);
 }
