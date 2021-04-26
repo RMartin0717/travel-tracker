@@ -11,7 +11,7 @@ const bookFlightButton = document.querySelector("#bookFlightButton");
 const tripCards = document.querySelector("#tripCards");
 
 let domUpdates = {
-
+  destinationsDataDOM: null,
 
   greetTraveler(traveler) {
     welcomeTraveler.innerText =
@@ -27,6 +27,11 @@ let domUpdates = {
       amountSpent.innerText =
       `Congrats! You have ${traveler.calcSpentThisYear() * 10} frequent flier miles because you have spent $${traveler.calcSpentThisYear()} on trips this year!`
     }
+  },
+
+  getTripDestination(destinationID) {
+    const travelerDestination = this.destinationsDataDOM.find(destination => destination.id === destinationID);
+    return travelerDestination
   },
 
   displayTravelerTrips(traveler) {

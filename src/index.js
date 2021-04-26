@@ -16,14 +16,14 @@ import {
 import './images/turing-logo.png'
 
 const destinationInput = document.querySelector("#destinationInput");
-const departureDateInput = document.querySelector("#departureDate");
+const departureDateInput = document.querySelector("#departureDateInput");
 const durationInput = document.querySelector("#durationInput");
 const travelerInput = document.querySelector("#travelerInput");
 const estimateCostButton = document.querySelector("#estimateCostButton");
 const bookFlightButton = document.querySelector("#bookFlightButton");
 
-estimateCostButton.addEventListener("click", createTrip, estimateCost);
-bookFlightButton.addEventListener("click", createTrip, bookFlight);
+estimateCostButton.addEventListener("click", estimateCost);
+bookFlightButton.addEventListener("click", bookFlight);
 
 let newTraveler, createdTrip;
 
@@ -32,7 +32,8 @@ window.onload = onStartup();
 function onStartup() {
   retrieveData()
     .then(allFetchedData => {
-      newTraveler = new Traveler(allFetchedData.singleTraveler, allFetchedData.allTrips.trips, allFetchedData.allDestinations.destinations);
+      newTraveler = new Traveler(allFetchedData.singleTraveler, allFetchedData.allTrips.trips, allFetchedData.allDestinations.destinations)
+      domUpdates.destinationsDataDOM = allFetchedData.allDestinations.destinations
       domUpdates.greetTraveler(newTraveler)
       domUpdates.displayAmountSpent(newTraveler)
       domUpdates.displayTravelerTrips(newTraveler)
@@ -58,24 +59,32 @@ function onStartup() {
 // }
 
 function createTrip() {
+  event.preventDefault();
   let newTrip = {
     id: 400,
     userID: 50,
-    destinationID: 800,
+    destinationID: parseInt(destinationInput.value),
     travelers: travelerInput.value,
-    date: departureDateInput.value,
+    date: departureDateInput.value.split("-").join("/"),
     duration: durationInput.value,
     status: "Pending"
   }
-  createdTrip = new Trip (trip);
-  console.log(createdTrip)
+  console.log(departureDateInput.value.split("-").join("/"))
+  const currentDestination = domUpdates.getTripDestination(newTrip.destinationID)
+  //pass in array of just the relevant destination data
+  createdTrip = new Trip(newTrip, [currentDestination]);
+  //need to pass in single destination object for that second parameter
+  return createdTrip
 }
 
 function estimateCost() {
+  event.preventDefault();
+  createTrip();
+  console.log(createdTrip)
   const cost = createdTrip.calcTripCost();
   domUpdates.displayEstimatedCost(cost);
 }
 
 function bookFlight() {
-
+  event.preventDefault();
 }
