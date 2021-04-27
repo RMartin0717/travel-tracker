@@ -12,6 +12,7 @@ const tripCards = document.querySelector("#tripCards");
 
 let domUpdates = {
   destinationsDataDOM: null,
+  allTripsDataDOM: null,
 
   greetTraveler(traveler) {
     welcomeTraveler.innerText =

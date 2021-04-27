@@ -2,9 +2,9 @@ import domUpdates from "./domUpdates";
 
 // const allTravelersURL = "http://localhost:3001/api/v1/travelers";
 
-export const retrieveData = () => {
+export const retrieveData = (travelerID) => {
 
-  const singleTravelerURL = "http://localhost:3001/api/v1/travelers/50";
+  const singleTravelerURL = `http://localhost:3001/api/v1/travelers/${travelerID}`;
   const allTripsURL = "http://localhost:3001/api/v1/trips";
   const allDestinationsURL = "http://localhost:3001/api/v1/destinations";
   const modifySingleTripURL = "http://localhost:3001/api/v1/updateTrip";

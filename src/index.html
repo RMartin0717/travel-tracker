@@ -10,6 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   </head>
   <body>
+    <form class="login-form" id="loginForm">
+      <div class="login-inputs">
+        <div>
+          <label for="usernameInput" class="login">username:</label>
+          <input type="text" placeholder="username" id="usernameInput">
+        </div>
+        <div>
+          <label for="passwordInput" class="login">password:</label>
+          <input type="text" placeholder="password" id="passwordInput">
+        </div>
+        <p class="login-error hidden" id="loginError">Please enter your correct username and password</p>
+        <button class="login-button" id="loginButton">Login</button>
+      </div>
+    </form>
     <main>
       <header>
         <h1 class="travel-tracker-heading">Travel Tracker</h1>
@@ -55,7 +69,8 @@
             <label for="travelerInput">Number of Travelers</label>
             <input type="number" min="1" max="25" id="travelerInput" name="traveler-input" required aria-required="true">
           </div>
-          <p id="estimateCost">Estimated Cost: $_______</p>
+          <p id="estimateCost">Estimated Cost: $$$</p>
+          <p class="missing-input hidden" id="missingInput">Please fill out all input fields and select a valid start date</p>
           <button class="estimate-cost" id="estimateCostButton">Estimate Cost</button>
           <button class="book-flight" id="bookFlightButton">Book Flight</button>
         </div>
