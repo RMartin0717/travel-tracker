@@ -9,7 +9,6 @@ class Trip {
     this.status = tripData.status;
     this.suggestedActivities = tripData.suggestedActivities;
     this.destination = this.getTripDestination(destinationsData);
-    //remove this.destination and destinationsData parameter
   }
 
   getTripDestination(destinationsData) {

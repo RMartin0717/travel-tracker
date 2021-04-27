@@ -13,7 +13,6 @@ export const retrieveData = (travelerID) => {
       return singleTravelerData
     })
 
-
   let retrieveAllTrips = fetch(allTripsURL)
     .then(response => response.json())
     .then(allTripsData => {
