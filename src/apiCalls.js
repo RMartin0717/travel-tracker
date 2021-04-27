@@ -1,14 +1,11 @@
 import domUpdates from "./domUpdates";
 
-// const allTravelersURL = "http://localhost:3001/api/v1/travelers";
-
 export const retrieveData = (travelerID) => {
 
   const singleTravelerURL = `http://localhost:3001/api/v1/travelers/${travelerID}`;
   const allTripsURL = "http://localhost:3001/api/v1/trips";
   const allDestinationsURL = "http://localhost:3001/api/v1/destinations";
   const modifySingleTripURL = "http://localhost:3001/api/v1/updateTrip";
-
 
   let retrieveSingleTraveler = fetch(singleTravelerURL)
     .then(response => response.json())
@@ -36,7 +33,6 @@ export const retrieveData = (travelerID) => {
       allData.allDestinations = data[2];
       return allData
     })
-    .catch(err => console.log("error"))
 }
 
 export const sendData = (newData) => {
@@ -49,5 +45,8 @@ export const sendData = (newData) => {
     },
     body: JSON.stringify(newData),
   })
-    .catch(error => console.log("error"))
+  .then(response => errorMessage(response.status))
+  .catch(error => {
+    domUpdates.errorMessage(error)
+  })
 }

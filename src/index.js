@@ -27,8 +27,6 @@ bookFlightButton.addEventListener("click", bookFlight);
 
 let newTraveler, createdTrip;
 
-// window.onload = onStartup();
-
 function onStartup(travelerID) {
   retrieveData(travelerID)
     .then(allFetchedData => {
@@ -41,12 +39,15 @@ function onStartup(travelerID) {
       domUpdates.displayTravelerTrips(newTraveler)
       domUpdates.displayDestinationList(allFetchedData.allDestinations.destinations)
     })
-    .catch(error => console.log("error"))
+    .then(response => errorMessage(response.status))
+    .catch(error => {
+      domUpdates.errorMessage(error)
+    })
 }
 
 function createTrip() {
   event.preventDefault();
-  if (!destinationInput.value || !departureDateInput.value || !durationInput.value || !travelerInput.value) {
+  if (destinationInput.value === "please-select" || !departureDateInput.value || !durationInput.value || !travelerInput.value) {
     missingInputNotice.classList.remove("hidden");
     return
   } else {
@@ -68,9 +69,9 @@ function createTrip() {
 
 function userLogin() {
   event.preventDefault();
-  if (usernameInput.value.includes("traveler") && usernameInput.value.length === 10 && passwordInput.value === "travel2020") {
-    const splitUsername = usernameInput.value.split("traveler");
-    const getUserID = parseInt(splitUsername[1]);
+  const splitUsername = usernameInput.value.split("traveler");
+  const getUserID = parseInt(splitUsername[1]);
+  if (getUserID > 0 && getUserID <= 50 && passwordInput.value === "travel2020") {
     onStartup(getUserID);
     loginForm.classList.add("hidden");
   } else {

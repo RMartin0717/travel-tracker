@@ -7,6 +7,8 @@ const durationInput = document.querySelector("#durationInput");
 const travelerInput = document.querySelector("#travelerInput");
 const estimateCostButton = document.querySelector("#estimateCostButton");
 const bookFlightButton = document.querySelector("#bookFlightButton");
+const loginError = document.querySelector("#loginError");
+const missingInputNotice = document.querySelector("#missingInput");
 
 const tripCards = document.querySelector("#tripCards");
 
@@ -52,6 +54,7 @@ let domUpdates = {
         `)
     });
   },
+
   displayDestinationList(destinations) {
     destinationInput.innerHTML = `<option value="please-select">--Please Select a Destination--</option>`;
     destinations.forEach(destination => {
@@ -65,7 +68,12 @@ let domUpdates = {
     estimateCost.innerText = `Estimated Cost: $${cost}`;
   },
 
-
+  errorMessage(res) {
+    if (res >= 400) {
+      loginError.innerText = "Request Failed.";
+      missingInputNotice.innerText = "Request Failed.";
+    }
+  },
 }
 
 

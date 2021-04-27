@@ -11,9 +11,13 @@ describe("Traveler", () => {
   beforeEach(() => {
     traveler = new Traveler(travelerTestingData[0], tripsTestingData, destinationsTestingData);
   });
-  it("Should have properties that store traveler data", () => {
+  it("Should have properties that store traveler id", () => {
     expect(traveler.id).to.equal(3);
+  });
+  it("Should have properties that store traveler name", () => {
     expect(traveler.name).to.equal("Sibby Dawidowitsch");
+  });
+  it("Should have properties that store traveler type", () => {
     expect(traveler.travelerType).to.equal("shopper");
   });
   it("Should have a parameter that takes in trip data and stores the traveler's data in a property", () => {

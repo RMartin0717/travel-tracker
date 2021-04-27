@@ -10,14 +10,25 @@ describe("Trip", () => {
   beforeEach(() => {
     trip = new Trip(tripsTestingData[0], destinationsTestingData);
   });
-  it("Should have properties that store trip data", () => {
+  it("Should have a property that stores the trip id", () => {
     expect(trip.id).to.equal(1);
+  });
+  it("Should have a property that stores the trip user id", () => {
     expect(trip.userID).to.equal(44);
-    expect(trip.destinationID).to.equal(49);
+  });
+  it("Should have a property that stores the trip number of travelers", () => {
     expect(trip.travelers).to.equal(2);
+  });
+  it("Should have a property that stores the trip's date'", () => {
     expect(trip.date).to.equal("2019/09/16");
+  });
+  it("Should have a property that stores the trip's duration'", () => {
     expect(trip.duration).to.equal(8);
+  });
+  it("Should have a property that stores the trip's status'", () => {
     expect(trip.status).to.equal("approved");
+  });
+  it("Should have a property that stores the trip's suggested activities'", () => {
     expect(trip.suggestedActivities).to.deep.equal([]);
   });
   it("Should find the destination data for an instance of a trip", () => {
@@ -32,5 +43,5 @@ describe("Trip", () => {
   });
   it("Should calculate the cost of the trip including flight cost and logdging cost for total travelers with 10% agent fee", () => {
     expect(trip.calcTripCost()).to.equal(11638);
-  })
+  });
 });
