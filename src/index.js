@@ -35,6 +35,7 @@ function onStartup() {
     .then(allFetchedData => {
       newTraveler = new Traveler(allFetchedData.singleTraveler, allFetchedData.allTrips.trips, allFetchedData.allDestinations.destinations)
       domUpdates.destinationsDataDOM = allFetchedData.allDestinations.destinations
+      domUpdates.allTripsDataDOM = allFetchedData.allTrips.trips
       domUpdates.greetTraveler(newTraveler)
       domUpdates.displayAmountSpent(newTraveler)
       domUpdates.displayTravelerTrips(newTraveler)
@@ -67,7 +68,7 @@ function createTrip() {
   } else {
     missingInputNotice.classList.add("hidden");
     let newTrip = {
-      id: 400,
+      id: domUpdates.allTripsDataDOM.length++,
       userID: 50,
       destinationID: parseInt(destinationInput.value),
       travelers: travelerInput.value,
@@ -75,7 +76,6 @@ function createTrip() {
       duration: durationInput.value,
       status: "Pending"
     }
-    console.log(departureDateInput.value.split("-").join("/"));
     const currentDestination = domUpdates.getTripDestination(newTrip.destinationID);
     createdTrip = new Trip(newTrip, [currentDestination]);
     return createdTrip
