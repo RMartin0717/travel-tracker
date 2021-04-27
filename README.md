@@ -39,15 +39,15 @@ When the user reaches the landing page, they must login with a username and pass
 
 Login Page
 
-<img src=".src/images/login-error.png" width="400">
+<img src="./src/images/login-error.png" width="400">
 
 Desktop
 
-<img src=".src/images/travel-tracker-desktop.gif" width="400">
+<img src="./src/images/travel-tracker-desktop.gif" width="400">
 
 Mobile
 
-<img src=".src/images/travel-tracker-mobile.gif" width="400">
+<img src="./src/images/travel-tracker-mobile.gif" width="400">
 
 
 
