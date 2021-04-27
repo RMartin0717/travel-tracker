@@ -21,6 +21,7 @@ const durationInput = document.querySelector("#durationInput");
 const travelerInput = document.querySelector("#travelerInput");
 const estimateCostButton = document.querySelector("#estimateCostButton");
 const bookFlightButton = document.querySelector("#bookFlightButton");
+const missingInputNotice = document.querySelector("#missingInput");
 
 estimateCostButton.addEventListener("click", estimateCost);
 bookFlightButton.addEventListener("click", bookFlight);
@@ -60,19 +61,25 @@ function onStartup() {
 
 function createTrip() {
   event.preventDefault();
-  let newTrip = {
-    id: 400,
-    userID: 50,
-    destinationID: parseInt(destinationInput.value),
-    travelers: travelerInput.value,
-    date: departureDateInput.value.split("-").join("/"),
-    duration: durationInput.value,
-    status: "Pending"
+  if (!destinationInput.value || !departureDateInput.value || !durationInput.value || !travelerInput.value) {
+    missingInputNotice.classList.remove("hidden");
+    return
+  } else {
+    missingInputNotice.classList.add("hidden");
+    let newTrip = {
+      id: 400,
+      userID: 50,
+      destinationID: parseInt(destinationInput.value),
+      travelers: travelerInput.value,
+      date: departureDateInput.value.split("-").join("/"),
+      duration: durationInput.value,
+      status: "Pending"
+    }
+    console.log(departureDateInput.value.split("-").join("/"));
+    const currentDestination = domUpdates.getTripDestination(newTrip.destinationID);
+    createdTrip = new Trip(newTrip, [currentDestination]);
+    return createdTrip
   }
-  console.log(departureDateInput.value.split("-").join("/"));
-  const currentDestination = domUpdates.getTripDestination(newTrip.destinationID);
-  createdTrip = new Trip(newTrip, [currentDestination]);
-  return createdTrip
 }
 
 function estimateCost() {
