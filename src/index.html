@@ -13,13 +13,14 @@
     <form class="login-form" id="loginForm">
       <div class="login-inputs">
         <div>
-          <label for="username" class="login">username:</label>
-          <input type="text" placeholder="username" id="username">
+          <label for="usernameInput" class="login">username:</label>
+          <input type="text" placeholder="username" id="usernameInput">
         </div>
         <div>
-          <label for="password" class="login">password:</label>
-          <input type="text" placeholder="password" id="password">
+          <label for="passwordInput" class="login">password:</label>
+          <input type="text" placeholder="password" id="passwordInput">
         </div>
+        <p class="login-error hidden" id="loginError">Please enter your correct username and password</p>
         <button class="login-button" id="loginButton">Login</button>
       </div>
     </form>

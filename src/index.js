@@ -15,6 +15,9 @@ const travelerInput = document.querySelector("#travelerInput");
 const estimateCostButton = document.querySelector("#estimateCostButton");
 const bookFlightButton = document.querySelector("#bookFlightButton");
 const missingInputNotice = document.querySelector("#missingInput");
+const usernameInput = document.querySelector("#usernameInput");
+const passwordInput = document.querySelector("#passwordInput");
+const loginError = document.querySelector("#loginError");
 const loginButton = document.querySelector("#loginButton");
 const loginForm = document.querySelector("#loginForm");
 
@@ -24,10 +27,10 @@ bookFlightButton.addEventListener("click", bookFlight);
 
 let newTraveler, createdTrip;
 
-window.onload = onStartup();
+// window.onload = onStartup();
 
-function onStartup() {
-  retrieveData()
+function onStartup(travelerID) {
+  retrieveData(travelerID)
     .then(allFetchedData => {
       newTraveler = new Traveler(allFetchedData.singleTraveler, allFetchedData.allTrips.trips, allFetchedData.allDestinations.destinations)
       domUpdates.destinationsDataDOM = allFetchedData.allDestinations.destinations
@@ -50,7 +53,7 @@ function createTrip() {
     missingInputNotice.classList.add("hidden");
     let newTrip = {
       id: domUpdates.allTripsDataDOM.length++,
-      userID: 50,
+      userID: newTraveler.id,
       destinationID: parseInt(destinationInput.value),
       travelers: travelerInput.value,
       date: departureDateInput.value.split("-").join("/"),
@@ -65,11 +68,14 @@ function createTrip() {
 
 function userLogin() {
   event.preventDefault();
-  //when button is clicked, login info is used in fetch request to get specific user data
-  //need error handling as well
-  //need to build out parameter for API GET call to recieve userID provided at login and interpolate the userID in the path for the GET fetch call
-  //if all this is successful, add hidden class to form
-  loginForm.classList.add("hidden");
+  if (usernameInput.value.includes("traveler") && usernameInput.value.length === 10 && passwordInput.value === "travel2020") {
+    const splitUsername = usernameInput.value.split("traveler");
+    const getUserID = parseInt(splitUsername[1]);
+    onStartup(getUserID);
+    loginForm.classList.add("hidden");
+  } else {
+    loginError.classList.remove("hidden");
+  }
 }
 
 function estimateCost() {
