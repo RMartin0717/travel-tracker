@@ -1,7 +1,3 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import domUpdates from "./domUpdates";
 import main from "./css/main.scss";
 import Traveler from "./traveler";
@@ -12,9 +8,6 @@ import {
   sendData
 } from "./apiCalls";
 
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
-
 const destinationInput = document.querySelector("#destinationInput");
 const departureDateInput = document.querySelector("#departureDateInput");
 const durationInput = document.querySelector("#durationInput");
@@ -22,7 +15,10 @@ const travelerInput = document.querySelector("#travelerInput");
 const estimateCostButton = document.querySelector("#estimateCostButton");
 const bookFlightButton = document.querySelector("#bookFlightButton");
 const missingInputNotice = document.querySelector("#missingInput");
+const loginButton = document.querySelector("#loginButton");
+const loginForm = document.querySelector("#loginForm");
 
+loginButton.addEventListener("click", userLogin);
 estimateCostButton.addEventListener("click", estimateCost);
 bookFlightButton.addEventListener("click", bookFlight);
 
@@ -41,24 +37,9 @@ function onStartup() {
       domUpdates.displayTravelerTrips(newTraveler)
       domUpdates.displayTravelerTrips(newTraveler)
       domUpdates.displayDestinationList(allFetchedData.allDestinations.destinations)
-    //   storeTraveler(newTraveler)
-    //   storeAllData(allFetchedData.allTrips.trips, allFetchedData.allDestinations.destinations)
     })
     .catch(error => console.log("error"))
-    //maybe destructute data coming in
-    //create instances needed in .then()'s
-    //call methods here from domUpdates to display to DOM
 }
-
-// function storeTraveler(traveler) {
-//   const currentTraveler = traveler
-//   console.log(currentTraveler)
-// }
-//
-// function storeAllData(allTrips, allDestinations) {
-//   const trips = allTrips;
-//   const destinations = allDestinations;
-// }
 
 function createTrip() {
   event.preventDefault();
@@ -80,6 +61,15 @@ function createTrip() {
     createdTrip = new Trip(newTrip, [currentDestination]);
     return createdTrip
   }
+}
+
+function userLogin() {
+  event.preventDefault();
+  //when button is clicked, login info is used in fetch request to get specific user data
+  //need error handling as well
+  //need to build out parameter for API GET call to recieve userID provided at login and interpolate the userID in the path for the GET fetch call
+  //if all this is successful, add hidden class to form
+  loginForm.classList.add("hidden");
 }
 
 function estimateCost() {
