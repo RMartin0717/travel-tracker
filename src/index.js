@@ -91,4 +91,5 @@ function bookFlight() {
   let {id, userID, destinationID, travelers, date, duration, status} = createdTrip
   let newData = {id: id, userID: userID, destinationID: destinationID, travelers: travelers, date: date, duration: duration, status: status, suggestedActivities: []}
   sendData(newData);
+  onStartup(newTraveler.id);
 }
