@@ -4,6 +4,7 @@ import Traveler from "./traveler";
 import Trip from "./trip";
 
 import {
+  deleteData,
   retrieveData,
   sendData
 } from "./apiCalls";
@@ -20,10 +21,14 @@ const passwordInput = document.querySelector("#passwordInput");
 const loginError = document.querySelector("#loginError");
 const loginButton = document.querySelector("#loginButton");
 const loginForm = document.querySelector("#loginForm");
+const tripCards = document.querySelector("#tripCards");
 
 loginButton.addEventListener("click", userLogin);
 estimateCostButton.addEventListener("click", estimateCost);
 bookFlightButton.addEventListener("click", bookFlight);
+tripCards.addEventListener("click", function(event) {
+  cancelFlight(event)
+})
 
 let newTraveler, createdTrip;
 
@@ -53,7 +58,7 @@ function createTrip() {
   } else {
     missingInputNotice.classList.add("hidden");
     let newTrip = {
-      id: domUpdates.allTripsDataDOM.length++,
+      id: Date.now(),
       userID: newTraveler.id,
       destinationID: parseInt(destinationInput.value),
       travelers: travelerInput.value,
@@ -93,4 +98,9 @@ function bookFlight() {
   let newData = {id: id, userID: userID, destinationID: destinationID, travelers: travelers, date: date, duration: duration, status: status, suggestedActivities: []}
   sendData(newData);
   onStartup(newTraveler.id);
+}
+
+function cancelFlight(event) {
+  deleteData(event.target.closest("article").id);
+  onStartup(newTraveler.id)
 }

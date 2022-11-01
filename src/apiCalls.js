@@ -50,3 +50,18 @@ export const sendData = (newData) => {
     domUpdates.errorMessage(error)
   })
 }
+
+export const deleteData = (id) => {
+  const tripURL =  `http://localhost:3001/api/v1/trips/${id}`
+
+  fetch(tripURL, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => errorMessage(response.status))
+  .catch(error => {
+    domUpdates.errorMessage(error)
+  })
+}
