@@ -11,6 +11,7 @@ const loginError = document.querySelector("#loginError");
 const missingInputNotice = document.querySelector("#missingInput");
 
 const tripCards = document.querySelector("#tripCards");
+const cancelTripButtons = document.querySelectorAll("#cancelButton")
 
 let domUpdates = {
   destinationsDataDOM: null,
@@ -41,13 +42,14 @@ let domUpdates = {
     tripCards.innerHTML = "";
     traveler.tripData.forEach(trip => {
       tripCards.insertAdjacentHTML("beforeend",   `
-        <article class="trip-card">
+        <article class="trip-card" id="${trip.id}">
           <div class="card-info">
             <h3>What a Good Trip</h3>
             <p>Destination: ${trip.destination.destination}</p>
             <p>Date: ${trip.date}</p>
             <p>Duration: ${trip.duration}</p>
             <p>Status: ${trip.status}</p>
+            <button id="cancelTrip ${trip.id}">Cancel Trip</button>
           </div>
           <img src=${trip.destination.image} alt=${trip.destination.alt} />
         </article>
