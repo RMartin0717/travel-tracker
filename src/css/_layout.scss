@@ -98,12 +98,16 @@ button {
 .trip-cards {
   @include container;
   height: 50vh;
+  width: 92%;
+  display: flex;
   min-height: 240px;
   background-color: $card-color;
   overflow: scroll;
 }
 
 .trip-card {
+  width: 100%;
+  flex: 1 0 88%;
   display: flex;
   justify-content: space-between;
   margin: 2vw;
